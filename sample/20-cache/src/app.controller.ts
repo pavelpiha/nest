@@ -1,12 +1,12 @@
 import {
-  CacheInterceptor,
   Controller,
   Get,
   UseInterceptors,
 } from '@nestjs/common';
+import { HttpCacheInterceptor } from './common/http-cache.interceptor';
 
 @Controller()
-@UseInterceptors(CacheInterceptor)
+@UseInterceptors(HttpCacheInterceptor)
 export class AppController {
   @Get()
   findAll() {
